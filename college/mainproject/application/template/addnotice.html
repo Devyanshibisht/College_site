@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'template/head.html' %}
+  </head>
+  <body>
+    
+    {% include 'template/adminmenu.html' %}
+ <section class="site-hero site-hero-innerpage overlay" style="background-image: url({% static 'my/notice.jpg' %}); min-height: 300px !important;">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center" style="min-height: 300px !important;">
+          <div class="col-md-8 text-center">
+            <h1>ADD NOTICE</h1>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+ <section class="site-section bg-light" style="padding: 0px !important;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 box">
+             <form action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 offset-3">    
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">TITLE</label>
+                      <input type="text" id="name" class="form-control" name="t1" required="required">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">DEPARTMENT</label>
+                      <select class="form-control "  name="t2" required="required">
+                          <option value="">Select Department</option>
+                          <option value="it">IT</option>
+                          <option value="cse">CSE</option>
+                          <option value="ecs">ECS</option>
+                          <option value="mechnical">MECHHICAL</option>
+                          <option value="civil">CIVIL</option>
+                          <option value="mba">MBA</option>
+                          <option value="mca">MCA</option>
+                          <option value="mtech">M.TECH</option>
+                          <option value="bca">BCA</option>
+                          <option value="bcom">B.COM</option>
+                          <option value="other">OTHER</option>
+                        </select>
+
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">DATE</label>
+                      <input type="date" id="name" class="form-control "  name="t3" required="required">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">SEMSETER</label>
+                      <select class="form-control"  name="t4" required="required">
+                        <option value="">Select Semestor</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        </select>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">NOTICE DETAIL</label>
+                      <textarea class="form-control"  name="t5" required="required"></textarea>
+                    </div>
+                  </div>
+                 
+                    <div class="row">
+                    <div class="col-md-12 form-group text-center"><br/>
+                      <input type="submit" value="Register" class="btn btn-primary">
+                    </div>
+                  </div>
+                  
+            </div>
+              
+          </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+     {% include 'template/adminfooter.html' %}

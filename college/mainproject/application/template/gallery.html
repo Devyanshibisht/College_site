@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'template/head.html' %}
+  </head>
+  <body>
+    
+    {% include 'template/topmenu.html' %}
+ <section class="site-hero site-hero-innerpage overlay" style="background-image: url({% static 'my/notice.jpg' %}); min-height: 300px !important;">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center" style="min-height: 300px !important;">
+          <div class="col-md-8 text-center">
+            <h1>SHOW Event images</h1>
+            <style type="text/css">
+            	img:hover{
+            		box-shadow: 5px 5px 10px black;
+            	}
+            </style>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site-section bg-light">
+      <div class="container">
+        
+        <div class="row blog-entries">
+        	{% for single in alldata %}
+          <div class="col-md-4 col-sm-6 col-12">
+            <a class="blog-entry">
+              <img src="{{ single.img.url }}" alt="Image placeholder" style="height: 350px; width: 350px;" ></a>
+          </div>
+         {% endfor %}
+        </div>
+
+
+       
+      </div>
+    </section>
+ 
+     {% include 'template/adminfooter.html' %}
+	
+</body>
+</html>

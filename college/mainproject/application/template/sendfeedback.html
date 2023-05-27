@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'template/head.html' %}
+  </head>
+  <body>
+    
+    {% include 'template/topmenu2.html' %}
+ <section class="site-hero site-hero-innerpage overlay" style="background-image: url({% static 'my/notice.jpg' %}); min-height: 300px !important;">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center" style="min-height: 300px !important;">
+          <div class="col-md-8 text-center">
+            <h1>Send feedback</h1>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+     {% for single in alldata %}
+ <form action="/feedback/" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <section class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 box">
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Name </label>
+                      <input type="text" id="name" class="form-control" name="t1" required="required"  value="{{ single.name }}" disabled="disabled">
+                      <input type="hidden" id="name" class="form-control" name="t1" required="required"  value="{{ single.name }}">
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Email-id </label>
+                      <input type="text" id="name" class="form-control" name="t2" required="required" value="{{ single.email }}"  disabled="disabled">
+                      <input type="hidden" id="name" class="form-control" name="t2" required="required" value="{{ single.email }}">
+
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Class </label>
+                      <input type="text" id="name" class="form-control" name="t3" required="required" value="{{ single.class1 }}"  disabled="disabled">
+                      <input type="hidden" id="name" class="form-control" name="t3" required="required" value="{{ single.class1 }}">
+                    </div>
+                  </div>
+                  
+          </div>
+          <div class="col-md-6 box">
+            
+                  
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Select Type  </label>
+                     <select class="form-control" name="t4" required="required">
+                        <option>Select Type</option>
+                        <option value="Complaint">Complaint</option>
+                        <option value="Suggestion">Suggestion</option>
+                        <option value="Feedback">Feedback</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-5">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Request</label>
+                      <textarea name="t5" required="required"  class="form-control"></textarea>
+                    </div>
+                  </div>
+
+                  
+<div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="submit" value="Add" class="btn btn-primary">
+                    </div>
+                  </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+                </form>
+    <!-- END section -->
+
+     {% include 'template/adminfooter.html' %}

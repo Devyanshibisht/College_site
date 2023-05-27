@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'template/head.html' %}
+  </head>
+  <body>
+    
+    {% include 'template/topmenu.html' %}
+
+    <section class="site-hero site-hero-innerpage overlay" style="background-image: url({% static 'my/reg.jpg' %});">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-8 text-center">
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+
+    <section class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 box">
+            <h2 class="mb-5">Register new account</h2>
+            <form action="/regcode/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">    
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" class="form-control" name="t1" required="required">
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Father Name</label>
+                      <input type="text" id="name" class="form-control "  name="t2" required="required">
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Mother Name</label>
+                      <input type="text" id="name" class="form-control "  name="t3" required="required">
+                    </div>
+                  </div><div class="row">
+                    
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Mobile-No</label>
+                      <input type="text" id="name" class="form-control "  name="t4" required="required">
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Image</label>
+                      <input type="file" id="name" class="form-control "  name="t5" required="required">
+                    </div>
+                  </div>
+
+                  
+            </div>
+              <div class="col-md-6">    
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Email Address</label>
+                      <input type="email" id="name" class="form-control " name="t6" required="required">
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Password</label>
+                      <input type="password" id="name" class="form-control " name="t7" required="required">
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">D.O.B</label>
+                      <input type="date" id="name" class="form-control " name="t8" required="required">
+                    </div>
+                  </div><div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Class</label>
+                      <input type="text" id="name" class="form-control " name="t9" required="required">
+                    </div>
+                  </div><div class="col-md-12 form-group">
+                    <br/>
+                      Male
+                      <input type="radio" id="name" name="t10" value="male">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      FeMale
+                      <input type="radio" id="name"  name="t10" value="female">
+
+                    </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group"><br/>
+                      <input type="submit" value="Register" class="btn btn-primary">
+                    </div>
+                  </div>
+            </div>
+          </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+     {% include 'template/footer.html' %}

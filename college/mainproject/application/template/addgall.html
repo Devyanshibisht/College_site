@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'template/head.html' %}
+  </head>
+  <body>
+    
+    {% include 'template/adminmenu.html' %}
+ <section class="site-hero site-hero-innerpage overlay" style="background-image: url({% static 'my/gal.jpg' %}); min-height: 300px !important;">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center" style="min-height: 300px !important;">
+          <div class="col-md-8 text-center">
+            <h1>ADD Gallery</h1>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+ <section class="site-section bg-light" style="padding: 0px !important;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 box">
+             <form action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 offset-3">    
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">LOCATION</label>
+                      <input type="text" id="name" class="form-control "  name="t1" required="required">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">DATE</label>
+                      <input type="date" id="name" class="form-control "  name="t2" required="required">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">UPLOAD IMAGES</label>
+                      <input type="file" id="name" class="form-control"  name="t3" multiple="multiple" required="required">
+                    </div>
+                  </div>
+
+                    <div class="row">
+                    <div class="col-md-12 form-group text-center"><br/>
+                      <input type="submit" value="ADD" class="btn btn-primary">
+                    </div>
+                  </div>
+                  
+            </div>
+              
+          </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+     {% include 'template/adminfooter.html' %}
